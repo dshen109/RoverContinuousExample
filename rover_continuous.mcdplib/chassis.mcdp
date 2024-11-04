@@ -1,0 +1,11 @@
+mcdp {
+  provides total_load [kg]
+  provides velocity [m/s]
+  requires power [W]
+
+  self_mass = 770 [kg]
+  gain_mass_velocity_to_power = 1 [W*s/m/kg]
+  min_required_power = 10 [W]
+
+  required power >= min_required_power + gain_mass_velocity_to_power * (provided total_load + self_mass) * provided velocity
+}

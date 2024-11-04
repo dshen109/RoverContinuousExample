@@ -1,0 +1,11 @@
+title: Query_1
+description: 'Query for the rover model.'
+model: "`rover"
+query:
+  query_type: FixFunMinRes
+  min_f: 
+    extra_payload: '1000 kg'
+    velocity: '0.1 m/s'
+  max_r:
+    overall_cost: '10000000000000000000 USD'
+  optimize_for: [overall_cost]

@@ -1,0 +1,15 @@
+mcdp {
+  provides extra_payload [kg]
+  provides velocity [m/s]
+  requires overall_cost [USD]
+
+  battery_dp = instance `battery
+  chassis_dp = instance `chassis
+
+  provided extra_payload + mass_battery required by battery_dp <= total_load provided by chassis_dp
+  power required by chassis_dp <= power provided by battery_dp
+
+  provided velocity <= velocity provided by chassis_dp
+  required overall_cost >= total_cost required by battery_dp
+  # comment
+}

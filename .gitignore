@@ -1,0 +1,6 @@
+**/node_modules/
+**/out/
+**/out-mcdp_plot/
+
+**/package-lock.json
+**/package.jsonexit

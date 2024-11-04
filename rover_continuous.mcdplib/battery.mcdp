@@ -1,0 +1,8 @@
+
+dp {
+  provides power [W]
+  requires mass_battery [kg]
+  requires total_cost [USD]
+
+  implemented-by yaml resource("battery_catalogues/battery_catalogue_1.yaml")
+}
