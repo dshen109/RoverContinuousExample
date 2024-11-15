@@ -7,10 +7,10 @@ mcdp {
   battery_dp = instance `battery
   chassis_dp = instance `chassis
 
-  provided extra_payload + mass_battery required by battery_dp <= total_load provided by chassis_dp
+  provided extra_payload + (mass_and_cost required by battery_dp).mass_battery <= total_load provided by chassis_dp
   power required by chassis_dp <= power provided by battery_dp
 
   provided velocity <= velocity provided by chassis_dp
-  (required cost_and_mass).overall_cost >= total_cost required by battery_dp
+  (required cost_and_mass).overall_cost >= (mass_and_cost required by battery_dp).total_cost
   (required cost_and_mass).total_mass >= total_mass required by chassis_dp
 }

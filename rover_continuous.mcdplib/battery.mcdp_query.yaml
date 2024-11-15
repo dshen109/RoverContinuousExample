@@ -1,0 +1,11 @@
+title: Query_1
+description: 'Query for the chassis model.'
+model: "`battery"
+query:
+  query_type: FixFunMinRes
+  min_f: 
+    power: 10 W
+  max_r:
+    mass_and_cost: '<100000000 kg, 10000000000USD>'
+  optimize_for: [mass_and_cost]
+  
