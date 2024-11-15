@@ -1,7 +1,8 @@
 mcdp {
   provides extra_payload [kg]
   provides velocity [m/s]
-  requires overall_cost [USD]
+  # Let's use fancy produc of posets
+  requires cost_and_mass [product(overall_cost: USD, total_mass: kg)]
 
   battery_dp = instance `battery
   chassis_dp = instance `chassis
@@ -10,6 +11,6 @@ mcdp {
   power required by chassis_dp <= power provided by battery_dp
 
   provided velocity <= velocity provided by chassis_dp
-  required overall_cost >= total_cost required by battery_dp
-  # comment
+  (required cost_and_mass).overall_cost >= total_cost required by battery_dp
+  (required cost_and_mass).total_mass >= total_mass required by chassis_dp
 }

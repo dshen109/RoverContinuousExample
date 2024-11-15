@@ -7,5 +7,5 @@ query:
     extra_payload: '1000 kg'
     velocity: '0.1 m/s'
   max_r:
-    overall_cost: '10000000000000000000 USD'
-  optimize_for: [overall_cost]
+    cost_and_mass: '<10000000000000000000 USD, 100000000 kg>'
+  optimize_for: [cost_and_mass]
