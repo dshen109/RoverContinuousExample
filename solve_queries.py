@@ -28,6 +28,7 @@ def main():
     query = "rover_q"
     subprocess.run(f"docker exec {container_id} mcdp-solve-query {query}", shell=True, check=True)
 
+    # read the output file and parse the results. Pay attention to which output file you are reading!
     with open("out/out-000/output.yaml", 'r', encoding="UTF-8") as file_stream:
         data = yaml.safe_load(file_stream)
         optimistic_antichain = eval(data['optimistic']['minimals'])
@@ -45,7 +46,8 @@ def main():
                     print(single_resource[1])
 
     # Do as many queries as you want!
-    # if you want to supress the output, you can use the following command
+    # if you want to supress the output when solving the queries, you can use the following command
+    #By looking into "subprocess" of Python more carefully, you may find better solutions to supress the output.
     print("Solving the query again with suppressing the output.")
     subprocess.run(f"docker exec {container_id} mcdp-solve-query {query}", shell=True, check=True, capture_output=True)
 
