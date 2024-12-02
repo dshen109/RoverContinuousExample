@@ -1,10 +1,12 @@
 F:
 - W
 R:
-- kg x USD
+- kg
+- USD
 implementations:
   model8:
     f_max:
     - 250.0 W
     r_min:
-    - <7213.479999999999 kg, 8656.17 USD>
+    - 7213.479999999999 kg
+    - 8656.17 USD

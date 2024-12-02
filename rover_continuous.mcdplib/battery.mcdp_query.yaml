@@ -6,6 +6,9 @@ query:
   min_f: 
     power: 10 W
   max_r:
-    mass_and_cost: '<100000000 kg, 10000000000USD>'
-  optimize_for: [mass_and_cost]
+    mass_battery: '100000000 kg'
+    total_cost: '10000000000000000000 USD'exit
+  optimize_for:
+   - mass_battery
+   - total_cost
   
