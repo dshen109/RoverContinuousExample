@@ -4,7 +4,7 @@ model: "`rover"
 query:
   query_type: FixFunMinRes
   min_f: 
-    extra_payload: '1000 kg'
+    extra_payload: '200 g'
     velocity: '0.1 m/s'
   max_r:
     cost_and_mass: '<10000000000000000000 USD, 100000000 kg>'

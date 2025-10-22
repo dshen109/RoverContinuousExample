@@ -1,6 +1,9 @@
 **/node_modules/
 **/out/
 **/out-mcdp_plot/
+**/out-query/
 
 **/package-lock.json
 **/package.jsonexit
+
+.vscode/
