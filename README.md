@@ -16,6 +16,7 @@ You don't need to be proficient in command-line tools to use MCDPL, it's only re
 ### Download the MCDP image
 
 Execute the command `docker pull zupermind/mcdp:2025` in the command line tool.
+Docker will download around 10GB of data to your computer.
 
 ### Test Your Installation and First Run of Solver
 
