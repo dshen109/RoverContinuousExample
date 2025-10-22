@@ -34,7 +34,7 @@ You would see the prompt become something like the following:
 It is like a virtual system running on your computer, with all the dependencies of MCDPL prepared.
 And you can interact with this virtual system in this command-line session.
 
-Execute the command `mcdp-solve-query rover_continuous.rover_q --optimistic 100 --pessimistic 100`.
+Execute the command `mcdp-solve-query rover_continuous.rover_q`.
 You should see the following output:
 
 ![Result of Query](pics/result-of-query.png)
