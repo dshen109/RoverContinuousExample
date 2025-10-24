@@ -1,0 +1,13 @@
+title: Query_1
+description: 'Query for the rover model with task.'
+model: "`rover_with_task"
+query:
+  query_type: FixFunMinRes
+  min_f: 
+    task: "`tasks: task_1"
+  max_r:
+    total_cost: 100000000 USD
+    total_mass: 10000000 kg
+  optimize_for: 
+  - total_cost
+  - total_mass
