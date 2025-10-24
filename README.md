@@ -20,7 +20,7 @@ Docker will download around 10GB of data to your computer.
 
 ### Test Your Installation and First Run of Solver
 
-Navigate to a proper folder, and execute `git pull git@github.com:mit-zardini-lab/RoverContinuousExample.git`.
+Navigate to a proper folder, and execute `git clone git@github.com:mit-zardini-lab/RoverContinuousExample.git`.
 This command downloads this repo locally to your computer.
 
 After it's complete, execute `cd RoverContinuousExample` to enter the downloaded folder.
