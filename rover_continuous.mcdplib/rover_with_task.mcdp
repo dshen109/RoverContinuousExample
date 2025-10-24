@@ -1,0 +1,16 @@
+mcdp {
+  provides task [`tasks]
+  requires total_cost [USD]
+  requires total_mass [kg]
+
+  task_schedule_dp = instance `task_schedule
+  rover_dp = instance `rover
+
+  provided task <= task provided by task_schedule_dp
+
+  required total_cost >= (cost_and_mass required by rover_dp).overall_cost
+  required total_mass >= (cost_and_mass required by rover_dp).total_mass
+
+  extra_payload required by task_schedule_dp <= extra_payload provided by rover_dp
+  velocity required by task_schedule_dp <= velocity provided by rover_dp
+}

@@ -1,5 +1,4 @@
-import subprocess
-from decimal import Decimal
+from docker_python import start_container, run_command_in_container, get_current_directory, transfer_path_by_system
 
 import yaml
 
@@ -21,12 +20,13 @@ def main():
             yaml.dump(data, file_stream)
 
     # start the docker container
-    container_id = subprocess.check_output("docker run --platform linux/amd64 -it --rm -v $PWD:$PWD -w $PWD -d zupermind/mcdp:2024 bash -l", shell=True).decode().strip()
-    print(f"Container ID: {container_id}")
+    curret_path = transfer_path_by_system(get_current_directory())
+    container_instance = start_container(curret_path)
 
     # run mcdp solver for a specific query
-    query = "rover_q"
-    subprocess.run(f"docker exec {container_id} mcdp-solve-query {query}", shell=True, check=True)
+    query = "rover_continuous.rover_q"
+    output = run_command_in_container(container_instance, f"mcdp-solve-query {query}")
+    print(output)
 
     # read the output file and parse the results. Pay attention to which output file you are reading!
     with open("out/out-000/output.yaml", 'r', encoding="UTF-8") as file_stream:
@@ -46,13 +46,9 @@ def main():
                     print(single_resource[1])
 
     # Do as many queries as you want!
-    # if you want to supress the output when solving the queries, you can use the following command
-    #By looking into "subprocess" of Python more carefully, you may find better solutions to supress the output.
-    print("Solving the query again with suppressing the output.")
-    subprocess.run(f"docker exec {container_id} mcdp-solve-query {query}", shell=True, check=True, capture_output=True)
 
-    # stop the docker container
-    subprocess.run(f"docker stop {container_id}", shell=True, check=True)
+    # Stop the container when done
+    container_instance.stop()
 
 if __name__ == '__main__':
     main()

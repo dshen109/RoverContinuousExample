@@ -1,0 +1,7 @@
+dp {
+  provides task [`tasks]
+  requires extra_payload [kg]
+  requires velocity [m/s]
+
+  implemented-by yaml resource("task_catalogues/task_catalogue.yaml")
+}

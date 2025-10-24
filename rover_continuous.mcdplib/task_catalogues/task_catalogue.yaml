@@ -1,0 +1,30 @@
+F:
+- "`tasks"
+R:
+- kg
+- m/s
+implementations:
+  schedule1:
+    f_max:
+    - "`tasks: task1"
+    r_min:
+    - 1000 g
+    - 10 m/s
+  schedule2:
+    f_max:
+    - "`tasks: task2"
+    r_min:
+    - 500 g
+    - 10 m/s
+  schedule3:
+    f_max:
+    - "`tasks: task3"
+    r_min:
+    - 1000 g
+    - 5 m/s
+  schedule4:
+    f_max:
+    - "`tasks: task4"
+    r_min:
+    - 500 g
+    - 5 m/s
