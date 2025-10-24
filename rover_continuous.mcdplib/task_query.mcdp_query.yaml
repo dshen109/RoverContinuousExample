@@ -1,0 +1,13 @@
+title: Query_1
+description: 'Query for the rover model with task.'
+model: "`task_schedule"
+query:
+  query_type: FixFunMinRes
+  min_f: 
+    task: "`tasks: task_4"
+  max_r:
+    extra_payload: 10000000 kg
+    velocity: 10000 m/s
+  optimize_for: 
+  - extra_payload
+  - velocity
